@@ -1,0 +1,11 @@
+<upi:RespPay xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-16T14:15:47+05:30" orgId="npci" msgId="2"/>
+ <Txn id="8ENSVVR4QOS7X1UGPY7JGUV444PL9T2C3QM" 
+ note="Sending money for your use"
+ ts="2015-01-16T14:15:42+05:30" type="PAY">
+     <Resp reqMsgId="1" result="SUCCESS” approvalNum="3MKBVB">
+         <Ref type="PAYER" seqNum="1" addr="ram@sbi"  settAmount="5000" approvalNum="AWHWU9" />
+         <Ref type="PAYEE" seqNum="2" addr="laxmi1987@boi"  settAmount="5000" approvalNum="ESOP61" />         
+     </Resp>
+</upi:RespPay>
+

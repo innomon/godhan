@@ -1,0 +1,14 @@
+<upi:RespPay xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-17T20:23:37+05:30" orgId="npci" msgId="3"/>
+ <Txn id="7KGEYCTNLBOECLO70F9ZGY5FOTQRKDKZ5RL" 
+ note="Your portion of the dinner bill"
+ ts="2015-01-17T20:23:02+05:30" type="COLLECT">
+ <!-- Txn is echoed back from the original transaction request -->
+ <Resp result="SUCCESS” approvalNum="XTROX1">
+ <!-- For the requester, reqMsgId is the msgId of the message used to 
+ initiate the transaction, else it is blank (or not present) -->
+ <Ref type="PAYER" seqNum="2" addr="shyam.444@icici" 
+ settAmount="200" approvalNum="LZEQ8L" />
+ </Resp>
+</upi:RespPay>
+

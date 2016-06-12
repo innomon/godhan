@@ -1,0 +1,40 @@
+<upi:ReqPay xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-17T20:23:03+05:30" orgId="pnb" msgId="1"/>
+ <Meta>
+ <Tag name="PAYREQSTART" value="2015-01-17T20:22:58+05:30"/>
+ <Tag name="PAYREQEND" value="2015-01-17T20:23:02+05:30"/>
+ </Meta>
+ <Txn id="7KGEYCTNLBOECLO70F9ZGY5FOTQRKDKZ5RL" 
+ note="Your portion of the dinner bill"
+ ts="2015-01-17T20:23:02+05:30" type="COLLECT">
+ <Rules>
+ <Rule name="EXPIREAFTER" value="10080"/>
+ <!-- Payment request will expire in 7 days (7*24*60 minutes) -->
+ </Rules>
+ </Txn>
+ <Payees>
+ <Payee addr="ram@pnb" name="Ram" seqNum="1" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Ram" id="111122223333"/>
+ </Info>
+ <Device>
+ <Tag name="MOBILE" value="+91.12345.67890"/>
+ <Tag name="GEOCODE" value="12.9667,77.5667"/>
+ <Tag name="LOCATION" value="Sarjapur Road, Bangalore, KA, IN" />
+ <Tag name="IP" value="123.456.123.123"/>
+ <Tag name="ID" value="123456789"/>
+ <Tag name="OS" value="Android 4.4"/>
+ <Tag name="APP" value="CC 1.0"/>
+ <Tag name="CAPABILITY" value="011001">
+ </Device>
+ <Ac addrType="MOBILE">
+ <Detail name="MMID" value="PNBN0012024"/>
+ <Detail name="MOBNUM" value="+91.12345.67890"/>
+ </Ac>
+ <Amount value="200" curr="INR"/>
+ </Payee>
+ </Payees>
+ <Payer addr="shyam.444@icici" name="Shyam" seqNum="2" type="PERSON">
+ <Amount value="200" curr="INR"/>
+ </Payer>
+</upi:ReqPay>

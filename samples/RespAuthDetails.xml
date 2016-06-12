@@ -1,0 +1,17 @@
+<upi:RespAuthDetails xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-16T14:15:45+05:30" orgId="boi" msgId="1"/>
+ <Resp reqMsgId="1" result="SUCCESS" />
+ <Payees>
+ <Payee addr="laxmi1987@boi" name="Laxmi" seqNum="2" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Laxmi" id="123456789012"/>
+ </Info>
+ <Ac addrType="AADHAAR">
+ <Detail name="IIN" value="508505"/>
+ <Detail name="UIDNUM" value="123456789012"/>
+ </Ac>
+ <Amount value="5000" curr="INR"/>
+ </Payee>
+ </Payees>
+</upi:RespAuthDetails>
+

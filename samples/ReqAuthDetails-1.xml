@@ -1,0 +1,26 @@
+<upi:ReqAuthDetails xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-17T20:23:04+05:30" orgId="NPCI" msgId="1"/>
+ <Txn id="7KGEYCTNLBOECLO70F9ZGY5FOTQRKDKZ5RL" 
+ note="Your portion of the dinner bill"
+ ts="2015-01-17T20:23:02+05:30" type="COLLECT">
+ <RiskScores>
+ <Score provider="pnb" type="TXNRISK" value="0"/>
+ <Score provider="NPCI" type="TXNRISK" value="5"/>
+ </RiskScores>
+ <Rules>
+ <Rule name="EXPIREAFTER" value="10080"/>
+ <!-- Payment request will expire in 7 days (7*24*60 minutes) -->
+ </Rules>
+ </Txn>
+ <Payees>
+ <Payee addr="ram@pnb" name="Ram" seqNum="1" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Ram" id="111122223333"/>
+ </Info>
+ </Payee>
+ </Payees>
+ <Payer addr="shyam.444@icici" name="Shyam" seqNum="2" type="PERSON">
+ <Amount value="200" curr="INR"/>
+ </Payer>
+</upi:ReqAuthDetails>
+

@@ -1,0 +1,43 @@
+<upi:ReqPay xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-16T14:15:43+05:30" orgId="sbi" msgId="1"/>
+ <Meta>
+ <Tag name="PAYREQSTART" value="2015-01-16T14:15:35+05:30"/>
+ <Tag name="PAYREQEND" value="2015-01-16T14:15:42+05:30"/>
+ </Meta>
+ <Txn id="8ENSVVR4QOS7X1UGPY7JGUV444PL9T2C3QM" 
+ note="Sending money for your use"
+ ts="2015-01-16T14:15:42+05:30" type="PAY">
+ </Txn>
+ <Payer addr="ram@sbi" name="Ram" seqNum="1" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Ram" id="111122223333"/>
+ </Info>
+ <Device>
+     <Tag name="MOBILE" value="+91.12345.67890"/>
+     <Tag name="GEOCODE" value="12.9667,77.5667"/>
+     <Tag name="LOCATION" value="Sarjapur Road, Bangalore, KA, IN" />
+     <Tag name="IP" value="123.456.123.123"/>
+     <Tag name="ID" value="123456789"/>
+     <Tag name="OS" value="Android 4.4"/>
+     <Tag name="APP" value="CC 1.0"/>
+     <Tag name="CAPABILITY" value="011001">
+ </Device>
+ <Ac addrType="MOBILE">
+     <Detail name="MMID" value="SBIN0012024"/>
+     <Detail name="MOBNUM" value="+91.12345.67890"/>
+ </Ac>
+ <Creds>
+ <Cred type="PIN" subtype="MPIN">
+ <Data>base64 encoded bin data?</Data>
+ </Cred>
+ </Creds>
+ <Amount value="5000" curr="INR"/>
+ </Payer>
+ <Payees>
+ <Payee addr="laxmi1987@boi" name="Laxmi" seqNum="2" type="PERSON">
+ <Amount value="5000" curr="INR"/>
+ </Payee>
+ </Payees>
+</upi:ReqPay>
+
+

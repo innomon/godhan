@@ -1,0 +1,22 @@
+<upi:ReqAuthDetails xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-16T14:15:44+05:30" orgId="NPCI" msgId="1"/>
+ <Txn id="8ENSVVR4QOS7X1UGPY7JGUV444PL9T2C3QM" 
+ note="Sending money for your use"
+ ts="2015-01-16T14:15:42+05:30" type="PAY">
+ <RiskScores>
+ <Score provider="sbi" type="TXNRISK" value="0"/>
+ <Score provider="NPCI" type="TXNRISK" value="0"/>
+ </RiskScores>
+ </Txn>
+ <Payer addr="ram@sbi" name="Ram" seqNum="1" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Ram" id="111122223333"/>
+ </Info>
+ </Payer>
+ <Payees>
+ <Payee addr="laxmi1987@boi" name="Laxmi" seqNum="2" type="PERSON">
+ <Amount value="5000" curr="INR"/>
+ </Payee>
+ </Payees>
+</upi:ReqAuthDetails>
+

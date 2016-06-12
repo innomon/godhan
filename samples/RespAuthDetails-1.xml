@@ -1,0 +1,28 @@
+<upi:RespAuthDetails xmlns:upi="http://npci.org/upi/schema/">
+ <Head ver="1.0" ts="2015-01-17T20:23:35+05:30" orgId="icici" msgId="1"/>
+ <Resp reqMsgId="1" result="SUCCESS" />
+ <Payer addr="shyam.444@icici" name="Shyam" seqNum="2" type="PERSON">
+ <Info>
+ <Identity type="UIDAI" verifiedName="Shyam" id="123456789012"/>
+ </Info>
+ <Ac addrType="AADHAAR">
+ <Detail name="IIN" value="508534"/>
+ <Detail name="UIDNUM" value="123456789012"/>
+ </Ac>
+ <Creds>
+ <Cred type="AADHAAR" subtype="IIR">
+ <Data>…</Data>
+ </Cred>
+ </Creds>
+ <Amount value="200" curr="INR"/>
+ <Device>
+ <Tag name="MOBILE" value="+91.67890.12345"/>
+ <Tag name="LOCATION" value="Sarjapur Road, Bangalore, KA, IN" />
+ <Tag name="ID" value="123456789"/>
+ <Tag name="OS" value="Android 4.4"/>
+ <Tag name="APP" value="CC 1.0"/>
+ <Tag name="CAPABILITY" value="011001">
+ </Device>
+ </Payer>
+</upi:RespAuthDetails>
+
