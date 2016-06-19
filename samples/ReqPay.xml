@@ -20,7 +20,7 @@
      <Tag name="ID" value="123456789"/>
      <Tag name="OS" value="Android 4.4"/>
      <Tag name="APP" value="CC 1.0"/>
-     <Tag name="CAPABILITY" value="011001">
+     <Tag name="CAPABILITY" value="011001"/>
  </Device>
  <Ac addrType="MOBILE">
      <Detail name="MMID" value="SBIN0012024"/>

@@ -1,0 +1,38 @@
+= Notes
+
+
+
+== Resources
+http://piqi.org/[piqi: universal schema language]
+
+https://developers.google.com/protocol-buffers/docs/proto3[Protocol Buffers]
+
+https://developers.google.com/protocol-buffers/docs/reference/csharp/class/google/protobuf/well-known-types/timestamp[timestamp]
+
+http://www.grpc.io/[grpc]
+
+=== Go
+
+http://gopkg.in/xmlpath.v2[xml path lib]
+
+https://golang.org/pkg/encoding/xml/#Unmarshal[go xml unmarshall]
+
+https://godoc.org/google.golang.org/grpc[go grpc]
+
+https://godoc.org/github.com/golang/protobuf/proto[go proto]
+
+https://godoc.org/golang.org/x/crypto/openpgp[OpenGPG go]
+
+https://github.com/Shopify/go-lua[go lua ]
+
+
+=== Blockchain
+
+ 
+ 
+== Gopal: Go Wallet
+
+
+
+
+
