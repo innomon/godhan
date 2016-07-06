@@ -16,94 +16,54 @@ This license is subject to the following condition:
 The above copyright notice and either this complete permission notice or at a minimum a reference to the UPL must be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*
+* Author: Ashish Banerjee, tech@innomon.in
 */
 
-syntax = "proto3";
+package util
 
-package upi;
+import(
+  "container/list"
+  "gopkg.in/xmlpath.v2"
+  
+)
 
-// https://github.com/google/protobuf/blob/master/src/google/protobuf/timestamp.proto
+type XmlHandler func(in *xmlpath.Node) (out *xmlpath.Node)
 
-message Timestamp {
-
-  // Represents seconds of UTC time since Unix epoch
-  // 1970-01-01T00:00:00Z. Must be from from 0001-01-01T00:00:00Z to
-  // 9999-12-31T23:59:59Z inclusive.
-  int64 seconds = 1;
-
-  // Non-negative fractions of a second at nanosecond resolution. Negative
-  // second values with fractions must still have non-negative nanos values
-  // that count forward in time. Must be from 0 to 999,999,999
-  // inclusive.
-  int32 nanos = 2;
-}
-
-// based on UNIFIED PAYMENT INTERFACE – VERSION 1.0 ( DRAFT )
-
-service UnifiedPaymentInterface {
-   rpc Transact(stream UpiMessage) returns (stream UpiMessage) {}
-}
-
-message UpiMessage {
-  oneof payload {
-     Ack             ack = 1;
-     ReqPay          reqPay = 2;
-     RespPay         respPay = 3;
-     ReqAuthDetails  reqAuthDetails = 4;
-     RespAuthDetails respAuthDetails = 5;
-  }
-}
-
-message Head {
-   required string     ver      = 1;
-   required Timestamp  ts       = 2;
-   required string     msgId    = 3;
-   string              originId = 4;
-   
-}
-
-message Tuple {
-   required string name  = 1;
-            string value = 2;
-}
-
-message Meta {
-  repeated Tuple tag = 1 [packed=true];
-}
-message  Transaction {
-}
-
-message Party {
-}
-
-message Device {
-} 
-
-message Account {
-    required string addrType = 1;
-    map<string, string> detail = 2;
-}
-
-message Credential {
-    required string type    = 1;
-    required string subtype = 2;
-    bytes           data    = 3;      
-}
-
-message Credentials {
-    repeated Credential cred = 1  [packed=true];
-}
-
-Payee  -> Party
-message Amount {
-    required double value = 1;
-    required string currency = 2;
-             Tuple split = 3 ;
+type XPathHandler struct {
+	exec  XmlHandler
+	path  *xmlpath.Path  
 }
 
 
-message ReqPay {
-   required Head head  =;
-   
+type XHandler struct {
+ lst *list.List 
+}
+
+func New() XHandler {
+  return XHandler{ lst: list.New()}
+}
+func (h *XHandler) RegisterXPathHandler(xpathStr string, handler XmlHandler)  {
+    uhandler := XPathHandler { 
+                 exec : handler,
+                 path : xmlpath.MustCompile(xpathStr),
+    }
+    h.lst.PushFront(uhandler) 
+// List https://golang.org/pkg/container/list/#pkg-examples
+
+}
+
+func (h *XHandler) XmlHandler(in *xmlpath.Node) (out *xmlpath.Node) {
+
+   for e := h.lst.Front(); e != nil; e = e.Next() {
+		handler :=  e.Value.(XPathHandler)
+		if handler.path.Exists(in) {
+		   return handler.exec(in)
+		}
+	}
+
+  
+  return nil
 }
 

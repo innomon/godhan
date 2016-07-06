@@ -1,6 +1,32 @@
 = Notes
 
+.Section 5.1 of `UNIFIED PAYMENT INTERFACE – VERSION 1.2 ` notes
 
+As per `Section 5.1` of the Specification,  UPI API are stateless HTTPS calls, with XML payloads.
+
+The XML over HTTPS should have Content-Type of “application/xml” or “text/xml”. 
+
+URL format:
+
+  https://{{host}}/upi/api/1.0/urn:txnid:{{txnId}}
+
+*Note:* Though the document version is `v121` or VERSION 1.2 but the API version is `1.0`
+
+See the sample xml, an example of a `txnId` is "8ENSVVR4QOS7X1UGPY7JGUV444PL9T2C3QM"
+
+Refer page 35 of 107 of `UNIFIED PAYMENT INTERFACE – VERSION 1.2 `
+
+
+API Handler interface
+
+
+
+== Protocol Buffer
+https://github.com/google/protobuf/releases[protocol Buffer v3]
+
+   export GOPATH=$GOPATH:`pwd`
+
+ protoc --go_out=plugins=grpc:. txnchain.proto
 
 == Resources
 http://piqi.org/[piqi: universal schema language]
