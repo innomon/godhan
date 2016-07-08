@@ -1,0 +1,151 @@
+=== GPG Commands
+
+Work dir:
+
+ /home/ashish/ABLabs/crypto/gpg
+
+.Gen Private Key
+
+----
+gpg --gen-key
+
+gpg: key 4BA4F625 marked as ultimately trusted
+public and secret key created and signed.
+
+gpg: checking the trustdb
+gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+gpg: depth: 0  valid:   2  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 2u
+gpg: next trustdb check due at 2017-07-07
+pub   2048R/4BA4F625 2016-07-07 [expires: 2017-07-07]
+      Key fingerprint = E4EB CB42 E35B 7311 D74A  C91C 5C68 E99F 4BA4 F625
+uid                  Ashish Banerjee (Technology Evangelist) <tech@ashishbanerjee.com>
+sub   2048R/AA4E2151 2016-07-07 [expires: 2017-07-07]
+ 
+Pass Phrase, HINT: `10Cr@Y16`
+----
+
+.List Leys
+----
+ab$ gpg --list-keys
+/home/ashish/.gnupg/pubring.gpg
+-------------------------------
+pub   2048R/56E2E565 2016-06-21 [expires: 2018-06-21]
+uid                  Ashish Banerjee (Technology Evangelist) <ashish@bonbiz.in>
+sub   2048R/01DB58DF 2016-06-21 [expires: 2018-06-21]
+
+pub   2048R/4BA4F625 2016-07-07 [expires: 2017-07-07]
+uid                  Ashish Banerjee (Technology Evangelist) <tech@ashishbanerjee.com>
+sub   2048R/AA4E2151 2016-07-07 [expires: 2017-07-07]
+----
+
+.Export PubKey
+
+----
+ab$ gpg --armor --export ashish@bonbiz.in
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+mQENBFdpJrwBCACeySKC8d7CPLnv8RDiKvNHLBvKKRsBJgTgD6Ig8L1xjwQa+agb
+h1qyOAIlEXP/gQnxIi/PmkAH2ALqKfCvOwOTmTc2vCdBrqrwBS9k8FjJwISadqQj
+Qbs9VDpe0tase2BehY3Fz2/D98Lw3EaNG0VWtVfgIBJouGSS3MS/lzvTD9gNytm/
+oQC/4syChdjmMu4FpH3nnEnADXfHlwn5c4riA1PSKk0S8nrc9ki7Wex9sGn10cGK
+jvSOFvAVpg2L+e1mzYt+3rJxXx6SCyOiUX5VGm/pXxlEVMxvJASMMD9IRN4V8YVl
+sgHBWMx80gZghAj1acOSq0PSfbHI4FUvboo/ABEBAAG0OkFzaGlzaCBCYW5lcmpl
+ZSAoVGVjaG5vbG9neSBFdmFuZ2VsaXN0KSA8YXNoaXNoQGJvbmJpei5pbj6JAT0E
+EwEIACcFAldpJrwCGwMFCQPCZwAFCwkIBwIGFQgJCgsCBBYCAwECHgECF4AACgkQ
+htV6G1bi5WUrTwf/bmD9i1Is9egfUMSMqyNngow4hBZpF0XOj8wb0K7bcnSEJh2h
+81icj3dQaENGJc8O9GTPyWJjjYePqVFs3My2aEZL4xJZXQgppxd81qntT6ULuTMc
+DPbzwf7oQb0qomTCXrMIq//gC3gG9OTaUfKHqhTjj66kKRRxYa1hTyq8SyplrZDX
+iC4bJmFF7YQVTLPbrtbWuD5TJ42nJquwrC3wUkJLFdeYoyyFFo4u4J5TkAxiuuvi
+E1jWtFdCgWWzFcDW+/GJ6J4XKwfxSeDxbpaPck1VT/LTtS8GKD5chbFjjwf24amZ
+bXsLkdq+YYLskT0vgN+qGXHdIChcWo+1kwcHuLkBDQRXaSa8AQgAycmPYxUXt/CB
+hjjGvHc74w1xpIebP3ybYxIt0x5zvrX6M0m/Wq6hI6Xl1skajcrLT7lwya32Ffyj
+H9R/HV1RSz4/1zKxrTyyIM2sai+UoVpTMTLIf/bTahlT3bOQMXZ6YUrw577v7ulv
+ZXBDC29r67MZuwywbZs7zqjv2A9/PcIqNyCZ8JB6uOTm+bXxNOjBtTPmHcmVoDus
+zLg7+1fD9LCApQvIi6WACKpZnYGvm1J52BmE+trTh6yFqrCZjFOc7MNOmMJNT9ei
+U5Cdy1EnOMaOOYYJgX57t6ohT2QrpY6vZfa25MpfBa/Fi3Nhl1AyvcmqCPoL8KVn
+Z5G7PQ9QYQARAQABiQElBBgBCAAPBQJXaSa8AhsMBQkDwmcAAAoJEIbVehtW4uVl
+7tkH/0mCAoUXStqwda9ZlIrj7uxbFsQ4dkrKFsYdTKlHPC8Xgoh67GzMfvRSQyi8
+7m3qjrmN5gpiiJmqDITF0TW2wCCZkSSUEPaieP1DEZ7003GKea1PAU4NFmhZfaAf
+kwhlMg2VzY+j6POD6r9AsaRDT3w32BkfyLhEic8/ioRkEtulZT+OGh9TtnAj65dz
+qh7xuPv19GmChGkXKSM3V1JZzufFKUOaT4SsZ0aNuu208813DKGKmG7ynWNFc/yw
+13xdUor5kofHzWLDh+4ay17dJy9pSZQdqCr7rgG/Dst/L/UqNUaNWe2klpv0kwrO
+gsYWC2cyx9fPjROgrAkGZRYH6wg=
+=OkZy
+-----END PGP PUBLIC KEY BLOCK-----
+---- 
+
+.Sign Key
+----
+ab$ gpg --edit-key ashish@bonbiz.in
+gpg (GnuPG) 1.4.20; Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+
+pub  2048R/56E2E565  created: 2016-06-21  expires: 2018-06-21  usage: SC  
+                     trust: ultimate      validity: ultimate
+sub  2048R/01DB58DF  created: 2016-06-21  expires: 2018-06-21  usage: E   
+[ultimate] (1). Ashish Banerjee (Technology Evangelist) <ashish@bonbiz.in>
+
+gpg> fpr
+pub   2048R/56E2E565 2016-06-21 Ashish Banerjee (Technology Evangelist) <ashish@bonbiz.in>
+ Primary key fingerprint: 6743 8B85 385F A9AB 6650  329B 86D5 7A1B 56E2 E565
+
+gpg> sign
+
+pub  2048R/56E2E565  created: 2016-06-21  expires: 2018-06-21  usage: SC  
+                     trust: ultimate      validity: ultimate
+ Primary key fingerprint: 6743 8B85 385F A9AB 6650  329B 86D5 7A1B 56E2 E565
+
+     Ashish Banerjee (Technology Evangelist) <ashish@bonbiz.in>
+
+This key is due to expire on 2018-06-21.
+Are you sure that you want to sign this key with your
+key "Ashish Banerjee (Technology Evangelist) <tech@ashishbanerjee.com>" (4BA4F625)
+
+Really sign? (y/N) Y
+
+You need a passphrase to unlock the secret key for
+user: "Ashish Banerjee (Technology Evangelist) <tech@ashishbanerjee.com>"
+2048-bit RSA key, ID 4BA4F625, created 2016-07-07
+
+                  
+gpg> check
+uid  Ashish Banerjee (Technology Evangelist) <ashish@bonbiz.in>
+sig!3        56E2E565 2016-06-21  [self-signature]
+sig!         4BA4F625 2016-07-07  Ashish Banerjee (Technology Evangelist) <tech@
+
+gpg> help
+quit        quit this menu
+save        save and quit
+help        show this help
+fpr         show key fingerprint
+list        list key and user IDs
+uid         select user ID N
+key         select subkey N
+check       check signatures
+sign        sign selected user IDs [* see below for related commands]
+lsign       sign selected user IDs locally
+tsign       sign selected user IDs with a trust signature
+nrsign      sign selected user IDs with a non-revocable signature
+deluid      delete selected user IDs
+delkey      delete selected subkeys
+delsig      delete signatures from the selected user IDs
+pref        list preferences (expert)
+showpref    list preferences (verbose)
+trust       change the ownertrust
+revsig      revoke signatures on the selected user IDs
+enable      enable key
+disable     disable key
+showphoto   show selected photo IDs
+clean       compact unusable user IDs and remove unusable signatures from key
+minimize    compact unusable user IDs and remove all signatures from key
+
+* The `sign' command may be prefixed with an `l' for local signatures (lsign),
+  a `t' for trust signatures (tsign), an `nr' for non-revocable signatures
+  (nrsign), or any combination thereof (ltsign, tnrsign, etc.).
+
+gpg> quit
+Save changes? (y/N) Y
+----

@@ -6,10 +6,14 @@ NPCI UPI API Router implementation in Go language.
 
 This implementation of UPI using Protocol Buffer, improves upon the wire protocol effeciency, but does not  address the content re-organization.
 
-
+   ab$ pwd
+   /home/ashish/GitLabs/qzip/godhan
+   
    export GOPATH=$GOPATH:`pwd`
+   export SRC_DIR=DST_DIR=`pwd`/src/pb
+   protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/megh-upi.proto
 
-
+  
 
 == Kal, a Scheme compiler
 संकलन

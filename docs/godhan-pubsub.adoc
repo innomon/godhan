@@ -1,0 +1,35 @@
+== Pub Sub
+
+.Drivers
+
+* Google Pub/Sub
+* JMS MQ (Active MQ)
+* AMQP (Rabbit MQ)
+* MQTT 
+* ZeroMQ
+
+== Google PubSub
+
+https://cloud.google.com/pubsub/grpc-overview[gcloud pubsub proto grpc overview]
+
+https://github.com/googleapis/googleapis/blob/master/google/pubsub/v1/pubsub.proto[`pubsub.proto` github src]
+
+https://cloud.google.com/pubsub/reference/rpc/google.pubsub.v1#publisher[pubsub rpc ref]
+
+=== ZeroMQ
+
+
+http://zeromq.org/bindings:go[ZMQ Go bindings]
+
+https://github.com/pebbe/zmq4[Go ZMQ4 github]
+
+ ab$ docker pull zeromq/zeromq
+
+https://github.com/zeromq/zproto[zmq Protocol generator in Go]
+
+https://github.com/zeromq/goczmq[above project uses go c binding]
+
+
+
+
+

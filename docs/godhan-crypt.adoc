@@ -1,0 +1,97 @@
+== Crypto
+
+* Hash
+* Sign
+* Encrypt
+* PKI
+
+=== OpenPGP & GNUPG
+
+.OpenPGP
+
+https://bitbucket.org/skskeyserver/sks-keyserver/wiki/Home[OpenPGP Key Server Source]
+
+https://roll.urown.net/server/pgp-keyserver.html[PGP Server Setup how-to]
+
+https://roll.urown.net/ca/index.html[Certificate Authority setup how-to]
+
+http://www.ietf.org/rfc/rfc2440.txt[OpenPGP RFC 2440]
+
+https://godoc.org/golang.org/x/crypto/openpgp[OpenGPG]
+
+https://godoc.org/golang.org/x/crypto/openpgp[Golang OpenPGP Lib]
+
+http://www.tldp.org/HOWTO/archived/LDAP-Implementation-HOWTO/certificates.html[Publishing digital certificates with LDAP]
+
+https://tools.ietf.org/html/rfc6944[Storing Certificates in the Domain Name System (DNS)]
+
+http://wiki.cacert.org/PgpSigning[PGP CA Cert]
+
+
+.GNUPG
+https://www.gnupg.org/[GNUPG]
+
+https://www.gnupg.org/documentation/manuals/gnupg/index.html#SEC_Contents[GNUPG Doc Root]
+
+https://www.gnupg.org/gph/en/manual/book1.html[The GNU Privacy Handbook]
+
+https://www.gnupg.org/documentation/manuals.html[GPG Manuals]
+
+https://www.gnupg.org/documentation/manuals/gnupg/Howto-Create-a-Server-Cert.html[create TLS Server Cert]
+
+include::gpg-cmd.adoc[GPG commands]
+
+=== Go
+https://godoc.org/golang.org/x/crypto[go crypto dox]
+
+https://godoc.org/golang.org/x/crypto/nacl/secretbox[secret box : small message encryption]
+
+https://godoc.org/golang.org/x/crypto/openpgp[OpenGPG]
+
+.SSH
+
+ /home/ashish/go-path/src/golang.org/x/crypto/ssh
+
+see: `tcpip.go` for Listner example for TCP/IP
+
+=== Hyperledger
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md[protocol specification]
+
+https://github.com/hyperledger/fabric/blob/master/docs/README.md[get started]
+
+https://github.com/hyperledger/fabric/blob/master/docs/dev-setup/ca-setup.md[CA Setup]
+
+.Canonical Use Cases
+
+https://github.com/hyperledger/fabric/blob/master/docs/biz/usecases.md[Usecases]
+
+.Crypto Code
+
+Crypto Codes on Laptop:
+
+ ~/OpnSrc/fabric/core/crypto
+
+github.com/hyperledger/fabric/core/crypto[Hyperledger Crypto github]
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#3212-block-hashing[Block Hashing Algo]
+
+.Security Architecture
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#4-security-1[Security]
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#42-user-privacy-through-membership-services[PKI]
+
+.Wallet Service
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#45-online-wallet-service[Wallet Service]
+
+.Consensus
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#5-byzantine-consensus-1[Byzantine Consensus]
+
+.REST API
+
+https://github.com/hyperledger/fabric/blob/master/docs/protocol-spec.md#62-rest-api[REST API]
+
+

@@ -20,6 +20,61 @@ Refer page 35 of 107 of `UNIFIED PAYMENT INTERFACE – VERSION 1.2 `
 API Handler interface
 
 
+.Section 2.3 
+
+3rd party payment service providers can provide authentication, where as Banks (the account holding entity) can provide autorization and account management control.
+
+.Section 2.4.1.2: Aadhaar e-KYC
+
+.Section 2.4.2 NPCI Central Mapper
+
+"The Aadhaar Payments Bridge System (APBS) uses NPCI central mapper as a part of 
+National Automated Clearing House (NACH) to enable Government user departments to 
+electronically transfer subsidies and direct benefit transfers to individuals on the basis of 
+their Aadhaar number"
+
+"Similarly, central mapper allows anyone to send/receive money from a mobile number 
+without knowing the destination account details"
+
+"UPI, IMPS, and National Unified USSD Platform (NUUP) can take advantage of Central 
+Mapper for fetching and routing their payments"
+
+.Section 2.4.2.1 Aadhaar Payment Bridge System (APBS)
+
+"Currently the mapper has about 160 million Aadhaar to bank mappings in its database. As 
+part of large scale adoption of Direct Benefits Transfer (DBT) across all subsidy systems, it 
+is expected that mapping database will have about 200-250 million Aadhaar mappings 
+within next 12-18 months."
+
+.Section 4.3.1 Unified Interface - Message Flow
+
+"All Unified interface APIs are done using XML over HTTPS whereas all APIs behind the 
+existing systems at NPCI are done over ISO 8583 Messages (0200/0210)."
+
+
+
+.Section 4.3 APIs at a Glance
+
+"All APIs are asynchronous in nature meaning once the request is sent, response is sent back 
+separately via corresponding response API. This allows same APIs to be used for instant 
+payment as well as delayed payments. This also allows APIs to scale without having to wait 
+in a blocking mode. Callers are expected to call the API with a unique transaction ID for 
+which response is sent via a response API exposed by the caller.
+
+All APIs are expected to work in asynchronous mode. This allows the response to API call 
+to return to the caller immediately after queuing the request. All request-response 
+correlation must be done via the transaction ID set by the originating point. Exactly same 
+set of APIs are exposed by NPCI and PSPs.
+
+All APIs must be exposed via HTTPS using XML input and output (as defined in next 
+chapter). When calling APIs via a synchronous protocol like HTTP, listening server should
+push the message into a queue and send an acknowledgement response.
+"
+
+*IMORTANT:* Thus the UPI is not truely a client server architecture. It is a Peer-to-peer architecture. Thus all parties must host servers.
+ 
+== Queries
+What is "Aadhaar enabled e-sign" , section 2.3.2 of `UNIFIED PAYMENT INTERFACE – VERSION 1.2 `
 
 == Protocol Buffer
 https://github.com/google/protobuf/releases[protocol Buffer v3]

@@ -24,6 +24,9 @@ package upi;
 
 // https://github.com/google/protobuf/blob/master/src/google/protobuf/timestamp.proto
 
+import "google/protobuf/timestamp.proto";
+
+/*
 message Timestamp {
 
   // Represents seconds of UTC time since Unix epoch
@@ -37,12 +40,17 @@ message Timestamp {
   // inclusive.
   int32 nanos = 2;
 }
+*/
 
-// based on UNIFIED PAYMENT INTERFACE – VERSION 1.0 ( DRAFT )
-
+// based on UNIFIED PAYMENT INTERFACE – VERSION 1.2 
+/*
 service UnifiedPaymentInterface {
    rpc Transact(stream UpiMessage) returns (stream UpiMessage) {}
 }
+*/
+
+// *NOTE:* The Messages for which Hash computation is required must not have a Map field since, 
+//         Map by definition is a bag; not an ordered set.
 
 message UpiMessage {
   oneof payload {
@@ -58,13 +66,13 @@ message Head {
     string     ver      = 1;
     Timestamp  ts       = 2;
     string     msgId    = 3;
-   string              originId = 4;
+    string              originId = 4;
    
 }
 
 message Tuple {
     string name  = 1;
-            string value = 2;
+    string value = 2;
 }
 
 message Meta {
@@ -81,20 +89,20 @@ message Device {
 
 message Account {
      string addrType = 1;
-    map<string, string> detail = 2;
+     repeated Tuple detail = 2 [packed=true]; // MAP data structure not used,to preserve sequencing for hash computation.  see NOTE above.
 }
 
 message Credential {
      string type    = 1;
      string subtype = 2;
-    bytes           data    = 3;      
+     bytes           data    = 3;      
 }
 
 message Credentials {
     repeated Credential cred = 1  [packed=true];
 }
 
-Payee  -> Party
+//Payee  -> Party
 message Amount {
      double value = 1;
      string currency = 2;
@@ -103,7 +111,7 @@ message Amount {
 
 
 message ReqPay {
-    Head head  =;
+    Head head  =1;
    
 }
 
