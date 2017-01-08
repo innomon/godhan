@@ -23,4 +23,26 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 package main
 
+import (
+	//"flag"
+	//"gopkg.in/xmlpath.v2"
+	"clog"
+	"os"
+)
 
+func main() {
+	var cfgFl string
+	switch {
+	case len(os.Args) == 2:
+		cfgFl = os.Args[1]
+
+	case len(os.Args) == 1:
+		cfgFl = os.Getenv("GODHAN_CFG")
+
+	}
+	if len(cfgFl) == 0 {
+		clog.Fatalf("godhan <json config file>\n")
+		os.Exit(1)
+	}
+
+}

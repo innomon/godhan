@@ -1,0 +1,22 @@
+= Go Dhan: Configurator
+
+A simple AsciiDoc inspired configuration file. Of the following syntax:
+
+At start of line, a `.` followed by non case sensitive, `Init` followed by a space, then a string without spaces.
+
+Thereafter, a parameter block follows, delimited by a non empty line should have four or more hyphens, `-` , and closed by same number of `-`.
+
+The parameter string, enclosed between the initialization block is passed to the initializer as is. Thus, any format, including JSON, XML, CSV and any combination thereof.
+
+----
+.Init FunctionName
+-----
+{"hello", "some config" }
+
+<func-name>This mixed style, JSON and XML, is unlikely to be used by a developer, but allowed. </func-name>
+-----
+----
+
+The idea behind this design is that an asciidoc formatted configuration file can be passed to the Configuartion Manager. Thus a configuration file can support various formats as well as can be well documented.
+
+ 

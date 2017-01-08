@@ -1,4 +1,4 @@
-= Go Dhan
+= Go Dhan: UPI Router
 
 *WORK IN PROGRESS:* 
 
@@ -14,6 +14,9 @@ This implementation of UPI using Protocol Buffer, improves upon the wire protoco
    protoc -I=$SRC_DIR --go_out=$DST_DIR $SRC_DIR/megh-upi.proto
 
   
+== Other Software Elements and Design Patterns used.
+
+Please see `OTHER_PROJECTS_LICENSE.adoc`
 
 == Kal, a Scheme compiler
 संकलन

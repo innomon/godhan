@@ -92,6 +92,13 @@ https://developers.google.com/protocol-buffers/docs/reference/csharp/class/googl
 
 http://www.grpc.io/[grpc]
 
+=== MIFOS
+https://mifosforge.jira.com/wiki/display/MIFOSX/Unified+Payment+Interface[MIFOS UPI Dev Community]
+
+http://mifos.org/resources/technical-resources/[Mifos Resources]
+
+https://github.com/openMF/mifosx[MifosX Github]
+
 === Go
 
 http://gopkg.in/xmlpath.v2[xml path lib]
@@ -112,6 +119,7 @@ https://github.com/Shopify/go-lua[go lua ]
  
  
 == Gopal: Go Wallet
+
 
 
 
